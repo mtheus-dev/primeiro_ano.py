@@ -1,0 +1,1 @@
+#1) Crie um vetor de 10 elementos in 
