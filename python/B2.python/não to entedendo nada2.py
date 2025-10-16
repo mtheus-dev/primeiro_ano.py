@@ -43,6 +43,7 @@ if resposta == 's':
         if valor_atual <= 0:
             print("\nSaldo insuficiente. programa encerrado\n")
             break
+        
         resposta = input("Gostaria de fazer novo saque? s para sim e n para não: ")
         if resposta == "n":
     

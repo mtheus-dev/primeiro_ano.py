@@ -39,4 +39,33 @@ def login():
         else:
             escreva("ACESSO NEGADO. Entre em contado com o administrador do sistema.")
 
-login()
+#Faça um algoritmo que simule um caixa eletronico, o usuário pode sacar enquanto tiver dinheiro
+def caixaeletronico():
+    def escreva (mgs):
+        tamanho = len(mgs) + 4
+        print("_" * tamanho)
+        print(f"  {mgs}")
+        print("_" * tamanho)
+
+    def escolher_operacao(operacao):
+        print("1-sacar")
+        print("2-depositar")
+        print("3-ver saldo")
+        print("4-sair")
+
+        operacao = int(input("escolha a operação: "))
+
+    def sacar ():
+
+
+    valor_caixa = 1000
+    valor_atual = valor_caixa
+
+    escreva("Bem vindo ao caixa para saques")
+    escolher_operacao()
+
+    while valor_atual <= valor_caixa:
+
+        if valor_atual <= 0:
+            print("\nSaldo insuficiente. programa encerrado\n")
+            break
