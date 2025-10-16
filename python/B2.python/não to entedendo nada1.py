@@ -6,7 +6,7 @@ autor:Matheus Henrique De Lima Soares 1B de informatica
 # Escreva um programa que solicite do usuário login e senha, ele só terá 3 tentativas para acertar.
 contador = 1 
 login = "admin"
-senha = 1234
+senha = 12345
 
 print("________________________________")
 print("ACESSO AO SISTEMA")
