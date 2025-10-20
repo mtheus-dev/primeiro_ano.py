@@ -17,8 +17,7 @@ def menu():
         print("2-Batata frita")
         print("3-Refrigerante")
 
-    resposta = "s"
-    while resposta == "s":
+    while True:
 
         mostrar_cardapio()
 
@@ -41,4 +40,32 @@ def menu():
         if resposta != "s":
             print("você optou por sair")
             break
+        
+#Faça uma função para verificar se um número é par ou impar e use ele em um if para imprimir se é par ou se é impar.
+def par_ou_ímpar():
 
+    def verificação(variavel):
+        if variavel % 2 == 0:
+            print(f"O número {variavel} é par.")
+        
+        else:
+            print(f"O número {variavel} é ímpar.")
+
+    def escreva(mgs):
+        tamanho = len(mgs) + 4
+        print("_" * tamanho)
+        print(f"  {mgs}")
+        print("_" * tamanho)
+
+    resposta = "s"
+    while resposta == "s":
+        try:
+            numero = int(input("Digite um número: "))
+        except ValueError:
+            escreva("Entrada Invalida. Tente novamente")
+
+        verificação(numero)
+
+        resposta = input("Gostaria de repetir? S para sim N para não: ")
+
+menu()
