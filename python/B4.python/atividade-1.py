@@ -35,21 +35,21 @@ def menu():
         if escolhido == 3:
             print("Refrigerante para acompanhar")
 
-        resposta = input("gostaria de pedir de novo? ")
+        resposta = input("gostaria de pedir de novo? ").lower()
 
         if resposta != "s":
             print("você optou por sair")
             break
         
-#Faça uma função para verificar se um número é par ou impar e use ele em um if para imprimir se é par ou se é impar.
+#3)Faça uma função para verificar se um número é par ou impar e use ele em um if para imprimir se é par ou se é impar.
 def par_ou_ímpar():
 
     def verificação(variavel):
         if variavel % 2 == 0:
-            print(f"O número {variavel} é par.")
+            print(f"Os números {variavel} são pares.")
         
         else:
-            print(f"O número {variavel} é ímpar.")
+            print(f"Os números {variavel} são ímpar.")
 
     def escreva(mgs):
         tamanho = len(mgs) + 4
@@ -57,15 +57,22 @@ def par_ou_ímpar():
         print(f"  {mgs}")
         print("_" * tamanho)
 
-    resposta = "s"
-    while resposta == "s":
-        try:
-            numero = int(input("Digite um número: "))
-        except ValueError:
-            escreva("Entrada Invalida. Tente novamente")
+    quantidade = 5
+    pares = []
+    impares = []
+    while True:
+        for i in range(quantidade):
+            try:
+                numero = int(input(f"Digite o {i+1} número: "))
+            except ValueError:
+                escreva("Entrada Invalida. Tente novamente")
 
-        verificação(numero)
+            verificação(numero)
 
-        resposta = input("Gostaria de repetir? S para sim N para não: ")
+        resposta = input("Gostaria de repetir? S para sim N para não: ").lower()
 
-menu()
+        if resposta != "s":
+            escreva("Você optou por sair")
+            break
+
+par_ou_ímpar()

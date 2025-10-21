@@ -1,5 +1,5 @@
 #1) Ler um vetor com 15 elementos inteiros. Construir um programa que mostre quantos números do vetor são números primos.
-def números_primos():
+def numeros_primos():
     def escreva(mgs):
         tamanho = len(mgs) + 4
         print("_"*tamanho)
@@ -38,6 +38,7 @@ def números_primos():
             escreva("Você optou por sair.")
         except ValueError:
             escreva("Digite novamente: ")
+numeros_primos()
 
 #2) Ler um vetor com 20 números inteiros. Criar um segundo vetor contendo apenas os números pares do primeiro, e um terceiro vetor contendo apenas os números ímpares.
 def numero_pares_impares():
@@ -95,4 +96,3 @@ vetor_temperatura = []
 #8) Ler um vetor com 8 números inteiros. Construir um vetor com os mesmos números, mas sem repetir valores (remover duplicatas).
 
 #executando as funções
-numero_pares_impares()
