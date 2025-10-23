@@ -44,12 +44,11 @@ def menu():
 #3)Faça uma função para verificar se um número é par ou impar e use ele em um if para imprimir se é par ou se é impar.
 def par_ou_ímpar():
 
-    def verificação(variavel):
+    def verificação(variavel,lista_par,lista_impar):
         if variavel % 2 == 0:
-            print(f"Os números {variavel} são pares.")
-        
+            lista_par.append(variavel)
         else:
-            print(f"Os números {variavel} são ímpar.")
+            lista_impar.append(variavel)
 
     def escreva(mgs):
         tamanho = len(mgs) + 4
@@ -57,7 +56,7 @@ def par_ou_ímpar():
         print(f"  {mgs}")
         print("_" * tamanho)
 
-    quantidade = 5
+    quantidade = 10
     pares = []
     impares = []
     while True:
@@ -67,12 +66,17 @@ def par_ou_ímpar():
             except ValueError:
                 escreva("Entrada Invalida. Tente novamente")
 
-            verificação(numero)
+            verificação(numero,pares,impares)
+
+        escreva(f"Os números {pares} são pares.")
+
+        escreva(f"Os números {impares} são ímpar.")
 
         resposta = input("Gostaria de repetir? S para sim N para não: ").lower()
 
         if resposta != "s":
             escreva("Você optou por sair")
             break
+
 
 par_ou_ímpar()
