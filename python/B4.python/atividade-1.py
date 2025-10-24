@@ -10,7 +10,7 @@ def area_do_triangulo():
     print(f"A area do triangulo é: {calcular_area_triangulo(b,a)}")
 
 #2)Faça um procedimento para mostrar um cardápio simples na tela.
-def menu():
+def menu_restaurante():
     def mostrar_cardapio():
         print("cardápio")
         print("1-Hambúrguer")
@@ -61,10 +61,12 @@ def par_ou_ímpar():
     impares = []
     while True:
         for i in range(quantidade):
-            try:
-                numero = int(input(f"Digite o {i+1} número: "))
-            except ValueError:
-                escreva("Entrada Invalida. Tente novamente")
+            while True:
+                try:
+                    numero = int(input(f"Digite o {i+1} número: "))
+                    break
+                except ValueError:
+                    escreva("Entrada Invalida. Tente novamente")
 
             verificação(numero,pares,impares)
 
@@ -78,5 +80,44 @@ def par_ou_ímpar():
             escreva("Você optou por sair")
             break
 
+#Crie uma função calcular_desconto(preco, porcentagem) que retorne o preço com desconto. Crie um procedimento mostrar_preco_final(preco, porcentagem) que use a função acima e imprima o resultado.
+def desconto():
+    def calcular_desconto(preco,porcentagem):
+        desconto = (porcentagem/100) * preco
+        preco_final = preco - desconto
+        return preco_final
 
-par_ou_ímpar()
+
+    def mostrar_preco_final(preco, porcentagem):
+        preco_com_desconto = calcular_desconto(preco,porcentagem)
+
+        print(f"O preço do produto com {porcentagem}% de desconto é de {preco_com_desconto}")
+
+
+    def escreva(mgs):
+        tamanho = len(mgs) + 4
+        print("_" * tamanho)
+        print(f"  {mgs}")
+        print("_" * tamanho)
+
+
+    preco = 0
+    porcentagem = 0
+
+    while True:
+        while True:
+            try:
+                preco = int(input("Digite o preço do produto: "))
+                porcentagem = int(input("Digite o desconto do produto: "))
+                break
+            except ValueError:
+                escreva("Entrada invalida. Tente novamente")
+            
+        mostrar_preco_final(preco,porcentagem)
+
+        resposta = input("Gostaria de repetir? S para e N para não: ").lower()
+
+        if resposta != "s":
+            escreva("Você optou por sair")
+            break
+

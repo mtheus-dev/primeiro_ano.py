@@ -40,64 +40,73 @@ def login():
             escreva("ACESSO NEGADO. Entre em contado com o administrador do sistema.")
 
 #2)Faça um algoritmo que simule um caixa eletronico, o usuário pode sacar enquanto tiver dinheiro
-def caixa_eletronico():
-    saldo = 1000
-    def escreva (mgs):
-        tamanho = len(mgs) + 4
-        print("_" * tamanho)
-        print(f"  {mgs}")
-        print("_" * tamanho)
 
-    def escolher_operacao():
-        print("1-sacar")
-        print("2-depositar")
-        print("3-ver saldo")
-        print("4-sair")
+saldo = 1000
+def escreva (mgs):
+    tamanho = len(mgs) + 4
+    print("_" * tamanho)
+    print(f"  {mgs}")
+    print("_" * tamanho)
 
-        opcao = int(input("escolha a operação: "))
-        return opcao
+def escolher_operacao():
+    print("1-sacar")
+    print("2-depositar")
+    print("3-ver saldo")
+    print("4-sair")
 
-    def sacar (quantia):
-        global saldo
-        if quantia <= saldo and quantia > 0:
-            saldo -= quantia
-            return True
-        return False
+    while True:
+        try:
+            opcao = int(input("O que gostaria de fazer no banco hoje?: "))
 
-    def depositar(quantia):
-        global saldo
-        if quantia > 0:
-            saldo = saldo =+ quantia
+            if 1 <= opcao <= 4:
+                return opcao
+            
+            else:
+                escreva("Esse número não está no menu. Tente novamente.")
 
-    def main():
-        while True:
-            opcao_escolhida = escolher_operacao()
-            while opcao_escolhida != 0:
-                if opcao_escolhida == 1:
-                    quantia = int(input("Informe a quantia a ser sacada: "))
-                    opcao_sucesso = sacar (quantia)
-                    if opcao_sucesso:
-                        print("Saque realizado com sucesso")
-                        print(f"O saldo restante é: {saldo}")
-                    else:
-                        print("Saque não realizado")
+        except ValueError:
+            escreva("Entrada inválida. Digite um número de 1 a 4.")
 
-                if opcao_escolhida == 2:
-                    quantia = int(input("Informe a quantia que você gostaria de depositar: "))
-                    opcao_sucesso = depositar(quantia)
-                    if opcao_sucesso:
-                        print("O deposito foi realizado com sucesso")
-                        print(f"O saldo restante é: {saldo}")
-                    else:
-                        print("O deposito não foi realizado.")
+def sacar (quantia):
+    global saldo
+    if quantia <= saldo and quantia > 0:
+        saldo -= quantia
+        return True
+    return False
 
-                if opcao_escolhida == 3:
-                    print(saldo)
+def depositar(quantia):
+    global saldo
+    if quantia >= 0:
+        saldo += quantia
+        return True
+    return False
 
-                if opcao_escolhida == 4:
-                    print("Você optou por sair")
-                    break
-    main()
+def main():
+    while True:
+        opcao_escolhida = escolher_operacao()
+        if opcao_escolhida == 1:
+            quantia = int(input("Informe a quantia a ser sacada: "))
+            opcao_sucesso = sacar (quantia)
+            if opcao_sucesso:
+                print(f"Saque realizado com sucesso\nO saldo restante é: R$ {saldo:.2f}")
+            else:
+                print("Saque não realizado")
+
+        if opcao_escolhida == 2:
+            quantia = int(input("Informe a quantia que você gostaria de depositar: "))
+            opcao_sucesso = depositar(quantia)
+            if opcao_sucesso:
+                print(f"deposito realizado com sucesso\nO saldo restante é: R$ {saldo:.2f}")
+            else:
+                print("O deposito não foi realizado.")
+
+        if opcao_escolhida == 3:
+            print(f"O saldo restante é: R$ {saldo:.2f}")
+
+        if opcao_escolhida == 4:
+            escreva("Você optou por sair")
+            break
+main()
 
 #3)Crie uma função para somar uma lista de números.
 def soma_de_lista():
@@ -184,5 +193,3 @@ def palavra_palindromo_versao_facil():
     palavra = input("informe uma palavra: ")
 
     verificacao(palavra)
-
-palavra_palindromo_versao_dificil()
