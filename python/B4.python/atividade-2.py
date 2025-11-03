@@ -42,71 +42,82 @@ def login():
 #2)Faça um algoritmo que simule um caixa eletronico, o usuário pode sacar enquanto tiver dinheiro
 
 saldo = 1000
-def escreva (mgs):
-    tamanho = len(mgs) + 4
-    print("_" * tamanho)
-    print(f"  {mgs}")
-    print("_" * tamanho)
+def caixa_eletronico():
+    def escreva (mgs):
+        tamanho = len(mgs) + 4
+        print("_" * tamanho)
+        print(f"  {mgs}")
+        print("_" * tamanho)
 
-def escolher_operacao():
-    print("1-sacar")
-    print("2-depositar")
-    print("3-ver saldo")
-    print("4-sair")
+    def escolher_operacao():
+        print("1-sacar")
+        print("2-depositar")
+        print("3-ver saldo")
+        print("4-sair")
 
-    while True:
-        try:
-            opcao = int(input("O que gostaria de fazer no banco hoje?: "))
+        while True:
+            try:
+                opcao = int(input("O que gostaria de fazer no banco hoje?: "))
 
-            if 1 <= opcao <= 4:
-                return opcao
+                if 1 <= opcao and opcao <= 4:
+                    return opcao
+                
+                else:
+                    escreva("Esse número não está no menu. Tente novamente.")
+
+            except ValueError:
+                escreva("Entrada inválida. Digite um número de 1 a 4.")
+
+    def sacar (quantia):
+        global saldo
+        if quantia <= saldo and quantia > 0:
+            saldo -= quantia
+            return True
+        return False
+
+    def depositar(quantia):
+        global saldo
+        if quantia >= 0:
+            saldo += quantia
+            return True
+        return False
+
+    def main():
+        while True:
+
+            opcao_escolhida = escolher_operacao()
+
+            #opção de sacar
+            if opcao_escolhida == 1:
+
+                quantia = int(input("Informe a quantia a ser sacada: "))
+                opcao_sucesso = sacar (quantia)
+
+                if opcao_sucesso == True:
+                    escreva(f"Saque realizado com sucesso\nO saldo restante é: R$ {saldo:.2f}")
+                else:
+                    escreva(f"O valor de R$ {quantia} e maior que o valor do caixa que é R$ {saldo}")
             
-            else:
-                escreva("Esse número não está no menu. Tente novamente.")
+            #opção depositar
+            if opcao_escolhida == 2:
 
-        except ValueError:
-            escreva("Entrada inválida. Digite um número de 1 a 4.")
+                quantia = int(input("Informe a quantia que você gostaria de depositar: "))
+                opcao_sucesso = depositar(quantia)
 
-def sacar (quantia):
-    global saldo
-    if quantia <= saldo and quantia > 0:
-        saldo -= quantia
-        return True
-    return False
+                if opcao_sucesso:
+                    print(f"deposito realizado com sucesso\nO saldo restante é: R$ {saldo:.2f}")
+                else:
+                    print("O deposito não foi realizado.")
 
-def depositar(quantia):
-    global saldo
-    if quantia >= 0:
-        saldo += quantia
-        return True
-    return False
+            #opcão de ver o saldo
+            if opcao_escolhida == 3:
+                escreva(f"O saldo restante é: R$ {saldo:.2f}")
 
-def main():
-    while True:
-        opcao_escolhida = escolher_operacao()
-        if opcao_escolhida == 1:
-            quantia = int(input("Informe a quantia a ser sacada: "))
-            opcao_sucesso = sacar (quantia)
-            if opcao_sucesso:
-                print(f"Saque realizado com sucesso\nO saldo restante é: R$ {saldo:.2f}")
-            else:
-                print("Saque não realizado")
-
-        if opcao_escolhida == 2:
-            quantia = int(input("Informe a quantia que você gostaria de depositar: "))
-            opcao_sucesso = depositar(quantia)
-            if opcao_sucesso:
-                print(f"deposito realizado com sucesso\nO saldo restante é: R$ {saldo:.2f}")
-            else:
-                print("O deposito não foi realizado.")
-
-        if opcao_escolhida == 3:
-            print(f"O saldo restante é: R$ {saldo:.2f}")
-
-        if opcao_escolhida == 4:
-            escreva("Você optou por sair")
-            break
-main()
+            #opção de sair
+            if opcao_escolhida == 4:
+                escreva("Você optou por sair")
+                break
+    main()
 
 #3)Crie uma função para somar uma lista de números.
 def soma_de_lista():
@@ -193,3 +204,5 @@ def palavra_palindromo_versao_facil():
     palavra = input("informe uma palavra: ")
 
     verificacao(palavra)
+
+caixa_eletronico()
