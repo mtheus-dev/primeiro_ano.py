@@ -60,7 +60,7 @@ def numeros_intervalo():
         print("_" * tamanho) 
 
 
-    #versão só com while
+    #versão só com while 
     resposta = "s"
     while resposta == "s":
         try:
