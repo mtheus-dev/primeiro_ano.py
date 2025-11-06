@@ -115,7 +115,7 @@ def lista_semelhantes():
 #• Reais para dólares (1 real = 0,19 dólares).
 #No arquivo principal, importe o módulo e permita que o usuário escolha qual conversão deseja realizar
 
-import conversoes
+from biblioteca import conversoes
 def menu():
     print("\nEscolha uma conversão:")
     print("1 - Metros para centímetros")

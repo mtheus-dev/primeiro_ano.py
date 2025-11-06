@@ -36,6 +36,10 @@ opcao = menu()
 
 while True:
 
+    if opcao == 1:
+        numero1 = float(input("Digite o primeiro número: "))
+        numero
+
 #2)Faça um módulo com as operações para:
 #● Encontrar o maior número
 #● Encontrar o menor número
