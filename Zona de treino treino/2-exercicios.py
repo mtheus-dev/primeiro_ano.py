@@ -205,6 +205,6 @@ def contador_caracteres():
 
 #Mini-projeto — jogo de adivinhação por intervalos: descubra interativamente um número pensado pelo usuário entre 1 e 100, reduzindo um intervalo até encontrá-lo.'''
 
-
+"Esse numero é meno do que {}"
 
 contador_caracteres()

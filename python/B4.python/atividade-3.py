@@ -4,7 +4,7 @@
 #● Divisão
 #● Multiplicação
 #● Módulo (resto da divisão)
-import calculadora as calc
+from biblioteca import calculadora as calc
 
 def escreva (mgs):
     tamanho = len(mgs) + 4
@@ -38,7 +38,33 @@ while True:
 
     if opcao == 1:
         numero1 = float(input("Digite o primeiro número: "))
-        numero
+        numero2 = float(input("Digite o segundo número: "))
+
+        escreva(f"O valor da sua adição entre o número {numero1} e o número {numero2} é: {calc.soma(numero1,numero2)}")
+
+    elif opcao == 2:
+        numero1 = float(input("Digite o primeiro número: "))
+        numero2 = float(input("Digite o segundo número: "))
+
+        escreva(f"O valor da sua subtracao entre o número {numero1} e o número {numero2} é: {calc.subtracao(numero1,numero2)}")
+
+    elif opcao == 3:
+        numero1 = float(input("Digite o primeiro número: "))
+        numero2 = float(input("Digite o segundo número: "))
+
+        escreva(f"O valor da sua divisão entre o número {numero1} e o número {numero2} é: {calc.divisao(numero1,numero2)}")
+
+    elif opcao == 4:
+        numero1 = float(input("Digite o primeiro número: "))
+        numero2 = float(input("Digite o segundo número: "))
+
+        escreva(f"O valor da sua multiplicação entre o número {numero1} e o número {numero2} é: {calc.multilicacao(numero1,numero2)}")
+
+    elif opcao == 5:
+        numero1 = float(input("Digite o primeiro número: "))
+        numero2 = float(input("Digite o segundo número: "))
+
+        escreva(f"O valor do seu modulo  entre o número {numero1} e o número {numero2} é: {calc.subtracao(numero1,numero2)}")
 
 #2)Faça um módulo com as operações para:
 #● Encontrar o maior número
