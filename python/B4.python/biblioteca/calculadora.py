@@ -10,10 +10,10 @@ def divisao(numero1,numero2):
     resultado = numero1 / numero2
     return resultado
 
-def multilicacao(numero1,numero2):
+def multiplicacao(numero1,numero2):
     resultado = numero1 * numero2
     return resultado
 
 def modulo(numero1,numero2):
     resultado = numero1 % numero2
-    return resultado
+    return resultado 
