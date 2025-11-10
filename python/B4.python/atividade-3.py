@@ -31,7 +31,7 @@ def calculadora():
                     return opcao
                 
                 else:
-                    escreva("Esse número não está no meu menu. Tente novamente")
+                    escreva("Esse número não está no menu. Tente novamente")
 
             except ValueError:
                 escreva("Entrada invalida.Tente novamente")
@@ -80,6 +80,39 @@ def escreva (mgs):
 
 def menu_operacoes():
     escreva("\nEscolha uma operação")
+    print("1 - Encontrar o maior número")
+    print("2 - Encontra o menor número")
+    print("3 - Saber se um número é par ou impar")
+    print("0 - sair")
+
+    while True:
+        try:
+
+            opcao = int(input("Digite a opção desejada: "))
+
+            if opcao >= 0 and opcao <=  5:
+                return
+            
+            else:
+                escreva("Esse número não está no menu. Tente novamente")
+
+        except ValueError:
+            escreva("Entrada invalida. Tente novamente")
+
+lista_numeros = []
+quantidade = 10
+
+opcao = menu_operacoes()
+
+if opcao == 0:
+    escreva("Você optou por sair")
+
+elif opcao == 1:
+    for i in range(quantidade):
+        numeros = int(input(f"Digite o {i+1} número: ")
+        )
+        
+
 
 #3)Faça um módulo com as seguintes funções:
 #● Tornar a string toda em letras maiúsculas.
