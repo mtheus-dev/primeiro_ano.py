@@ -99,6 +99,27 @@ def menu_operacoes():
         except ValueError:
             escreva("Entrada invalida. Tente novamente")
 
+def executando_operacoes(nome,funcao):
+
+    for i in range(quantidade):
+        numeros = int(input(f"Digite o {i+1} número: ")
+        )
+
+        lista_numeros.append(numeros)
+
+    if nome == "maior" or nome == "menor" and funcao == oper.maior_n or funcao == oper.menor_n:
+
+        escreva(f"O {nome} número da lista {lista_numeros} é: {funcao(lista_numeros)}") 
+
+    else:
+        escreva(f"")
+
+operacoes = {
+    1:("maior",oper.maior_n),
+    2:("menor",oper.menor_n),
+    3:("")
+}
+
 lista_numeros = []
 quantidade = 10
 
@@ -111,6 +132,10 @@ elif opcao == 1:
     for i in range(quantidade):
         numeros = int(input(f"Digite o {i+1} número: ")
         )
+
+        lista_numeros.append(numeros)
+
+    escreva(f"O maior número da lista {lista_numeros} é: {oper.maior_n(lista_numeros)}") 
         
 
 
