@@ -44,10 +44,13 @@ def n3():
 #”Jogo pausado. Pressione S para sair.”
 #Usuário: S
 #“Jogo finalizado, até a próxima!”
+def n4():
+    desisao = ""
+    while desisao != "s":
 
-while desisao != "s":
+        desisao = input("Jogo pausado. Pressione S para sair.").lower()
 
-
+    print("Jogo finalizado, até a próxima!")
 
 #5)Coletando Itens: Imagine que você tem 15 moedas para coletar. Use um laço
 #PARA para simular a coleta, exibindo a mensagem "Moeda [número da moeda]
@@ -60,7 +63,9 @@ while desisao != "s":
 #Moeda 5 coletada
 #Moeda 6 coletada
 #…até o 15
-
+def n5():
+    for i in range(1,16):
+        print(f"Moeda {i} coletada")
 
 #6)Jogo de Dados: Simule um jogo de dados com um laço FAÇA ENQUANTO . O
 #jogo deve continuar enquanto a soma das variáveis com números aleatórios
@@ -75,7 +80,18 @@ while desisao != "s":
 #Soma atual: 89
 #Soma atual: 101
 #Soma foi maior que 100, jogo finalizado!
+def n6():
+    import random
 
+    numero = 0
+    dados = 100
+
+    while numero < dados:
+
+        numero = (5.50 + random.randint(0,100))
+
+        print(f"Soma atual: {numero}")
+    print("Soma foi maior que 100, jogo finalizado!")
 
 #7)Pontuação com Bônus: Crie um laço que adicione pontos ao jogador. Ele deve
 #começar com 0 pontos e, a cada repetição, ganhar 10 pontos. Quando o
@@ -91,7 +107,13 @@ while desisao != "s":
 #Jogador está com 90 pontos
 #Jogador está com 100 pontos
 #jogador ganhou bônus de 50 pontos! Pontuação final: 150
+def  n7():
+    pontos = 0
+    while pontos < 100:
+        pontos += 10
+        print(f"Jogador está com {pontos} pontos")
 
+    print(f"jogador ganhou bônus de 50 pontos! Pontuação final: {pontos + 50}")
 
 #8)Repetição de Ataque: Crie um laço PARA que simule 5 ataques seguidos do
 #seu personagem, exibindo a mensagem "Ataque [número do ataque]
@@ -101,7 +123,9 @@ while desisao != "s":
 #Ataque 3 realizado!
 #Ataque 4 realizado!
 #Ataque 5 realizado!
-
+def n8():
+    for i in range(1,6):
+        print(f"Ataque {i} realizado!")
 
 #9)Validação de Nível: Crie um laço REPITA... ATÉ que peça ao jogador para digitar
 #um número de nível para jogar. O laço deve continuar a pedir um número até
@@ -116,7 +140,17 @@ while desisao != "s":
 #Digite um nível de 1 a 5:
 #Usuário: 3
 #Nível 3 selecionado, bom jogo!
+def n9():
+    while True:
 
+        desicao = int(input("Digite um número:"))
+
+        if 1 < desicao > 5:
+            print("Número inválido, tente novamente.")
+        
+        else:
+            print(f"Nível {desicao} selecionado, bom jogo!")
+            break
 
 #10)Barra de Energia: Simule o carregamento de uma barra de energia usando um
 #laço ENQUANTO . A barra começa em 0% e vai até 100%, aumentando de 10 em
@@ -133,3 +167,9 @@ while desisao != "s":
 #Carregando energia: 90%
 #Carregando energia: 100%
 
+energia = 0
+while energia < 100:
+    energia += 10
+    print(f"Carregando energia: {energia}%")
+
+    

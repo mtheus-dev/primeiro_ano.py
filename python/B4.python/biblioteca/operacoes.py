@@ -30,3 +30,4 @@ def par_ou_impar(vetor):
             impares.append(vetor[i])
 
     return pares, impares
+g

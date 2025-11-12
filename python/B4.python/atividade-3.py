@@ -107,7 +107,7 @@ def executando_operacoes(nome,funcao):
 
         lista_numeros.append(numeros)
 
-    if nome == "maior" or nome == "menor" and funcao == oper.maior_n or funcao == oper.menor_n:
+    if nome != "par_e_impar" and funcao != oper.par_ou_impar:
 
         escreva(f"O {nome} número da lista {lista_numeros} é: {funcao(lista_numeros)}") 
 
