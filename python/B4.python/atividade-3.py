@@ -71,69 +71,69 @@ def calculadora():
 #● Encontrar o menor número
 #● Saber se um número é par ou impar
 from biblioteca import operacoes as oper
+def operacao():
+    def escreva (mgs):
+        tamanho = len(mgs) + 4
+        print("_" * tamanho) 
+        print(f"  {mgs}")
+        print("_" * tamanho)
 
-def escreva (mgs):
-    tamanho = len(mgs) + 4
-    print("_" * tamanho) 
-    print(f"  {mgs}")
-    print("_" * tamanho)
+    def menu_operacoes():
+        escreva("\nEscolha uma operação")
+        print("1 - Encontrar o maior número")
+        print("2 - Encontra o menor número")
+        print("3 - Saber se um número é par ou impar")
+        print("0 - sair")
 
-def menu_operacoes():
-    escreva("\nEscolha uma operação")
-    print("1 - Encontrar o maior número")
-    print("2 - Encontra o menor número")
-    print("3 - Saber se um número é par ou impar")
-    print("0 - sair")
+        while True:
+            try:
+
+                opcao = int(input("Digite a opção desejada: "))
+
+                if opcao >= 0 and opcao <=  3:
+                    return opcao
+                
+                else:
+                    escreva("Esse número não está no menu. Tente novamente")
+
+            except ValueError:
+                escreva("Entrada invalida. Tente novamente")
+
+    def executando_operacoes(nome,funcao,vetor = None):
+        if vetor is None:
+            vetor = []
+
+        for i in range(quantidade):
+            numeros = int(input(f"Digite o {i+1} número: ")
+            )
+
+            vetor.append(numeros)
+
+        if nome != "par_e_impar" and funcao != oper.par_ou_impar:
+
+            escreva(f"O {nome} número da lista {vetor} é: {funcao(vetor)}") 
+
+        else:
+            pares, impares = oper.par_ou_impar(vetor)
+            escreva(f"Os números pares e impares da lista{vetor} é de sendo pares {pares} e impares {impares}")
+
+    operacoes = {
+        1:("maior",oper.maior_n,),
+        2:("menor",oper.menor_n),
+        3:("par_e_impar",oper.par_ou_impar)
+    }
+
+    quantidade = 10
 
     while True:
-        try:
+        opcao = menu_operacoes()
 
-            opcao = int(input("Digite a opção desejada: "))
+        if opcao == 0:
+            escreva("Você optou por sair")
+            break
 
-            if opcao >= 0 and opcao <=  3:
-                return opcao
-            
-            else:
-                escreva("Esse número não está no menu. Tente novamente")
-
-        except ValueError:
-            escreva("Entrada invalida. Tente novamente")
-
-def executando_operacoes(nome,funcao,vetor = None):
-    if vetor is None:
-        vetor = []
-
-    for i in range(quantidade):
-        numeros = int(input(f"Digite o {i+1} número: ")
-        )
-
-        vetor.append(numeros)
-
-    if nome != "par_e_impar" and funcao != oper.par_ou_impar:
-
-        escreva(f"O {nome} número da lista {vetor} é: {funcao(vetor)}") 
-
-    else:
-        pares, impares = oper.par_ou_impar(vetor)
-        escreva(f"Os números pares e impares da lista{vetor} é de sendo pares {pares} e impares {impares}")
-
-operacoes = {
-    1:("maior",oper.maior_n,),
-    2:("menor",oper.menor_n),
-    3:("par_e_impar",oper.par_ou_impar)
-}
-
-quantidade = 10
-
-while True:
-    opcao = menu_operacoes()
-
-    if opcao == 0:
-        escreva("Você optou por sair")
-        break
-
-    nome, funcao = operacoes[opcao]
-    executando_operacoes(nome,funcao)
+        nome, funcao = operacoes[opcao]
+        executando_operacoes(nome,funcao)
 
 #3)Faça um módulo com as seguintes funções:
 #● Tornar a string toda em letras maiúsculas.
