@@ -18,4 +18,4 @@ numero1 = int(input())#Recebe o primeiro número
 print('por farvor insira o segundo número:')#Solicita o primeiro número
 numero2 = int(input())#Recebe o segundo número
 
-soma = numero1+numero2
+soma = numero1+numero2 #Soma os valores que estão na variaveis

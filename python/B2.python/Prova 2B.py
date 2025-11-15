@@ -5,6 +5,17 @@ Professor(a):Jean Carlos Wai Keung e Sabrina Maria Rodrigues Feliciano da Silva
 Atividade avaliativa    Data 24/07/2025
 Acadêmico:Matheus Henrique de Lima Soares 
 '''
+
+'''TU E DOIDO!
+que preguisa de explicar isso para vocês
+(-_-)
+vocês que se viram para entender 
+pede para o chatGPT explicar akakkakakakakak
+foi mal ai
+to com muito sono 
+são as 02:44 da manham de um domingo'''
+
+
 #1)Faça um programa que solicite do usuário um número inteiro.Após isso liste na tela todos os números inteiros deste o número digitado até 0.Ao final pergunte ao usuário se ele quer repetir o programa, se a resposta for sim ele deve inicia novamente.(Devem ser usados, obrigatoriamente  nesta questão:if,while e for).
 def conta_ate_zero():
 
