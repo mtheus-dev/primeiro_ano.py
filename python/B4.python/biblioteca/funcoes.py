@@ -15,15 +15,21 @@ def letra_maiusculas(palavra):
 
     minusculas = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
+    resultado = ""
+
     for letra in palavra:
+        trocou = False
+        for i in range (len(minusculas)):#posição da minha letra
+            
+            if letra == minusculas[i]:
 
-        for mi in minusculas:
-            for ma in maiusculas:
-                if letra in minusculas[mi]:
-                    letra = maiusculas [ma]
+                resultado += (maiusculas[i])
+                trocou = True
+                break
 
-    print(letra)
+            if not trocou:
+                resultado += letra
+                
+    print(resultado)
 
-palavra = input("digite uma palavra: ")
-
-letra_maiusculas(palavra)
+letra_maiusculas("palavra")

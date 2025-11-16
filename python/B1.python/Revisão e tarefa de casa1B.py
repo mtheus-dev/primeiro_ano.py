@@ -17,19 +17,18 @@ def media_do_ano():
     resposta = "s"
     while resposta == "s":
         try:
-            # a variável soma_notas vai armazenar a soma das notas(por isso eu crei ela antes de todo mais ainda colocando ela dentra while para que tado vez que o codigo for repetido a soma volte a ser zero)
             soma_notas = 0
-            for i in range(1,5):# o for vai repetir 4 vezes para pegar as notas dos 4 bimestres
+            for i in range(1,5):
                 notas_B = float(input(f"Digite sua nota do {i} bimestre: "))
 
-                while notas_B < 0:# se uma das notas for negativa o codigo vai se repetir ate que o usuário digite uma nota válida
+                while notas_B < 0:
                     print("Você digitou um número negativo")
                     notas_B = float(input(f"Redigite sua nota do {i} bimestre : ")) 
 
-                soma_notas += notas_B#isso e a mesma coisa de soma_notas = soma_notas + notas_B
-            media = soma_notas / 4# soma_notas que tem os valores das quatro notas dividido por 4 para fazer a média
+                soma_notas += notas_B
+            media = soma_notas / 4
 
-            if media >= 60:#se a media for maior ou igual a 60 o aluno passou.a parte do {media:.2f} serve para quando o numero aparecer na tela ele aparecer com duas casas decimais
+            if media >= 60:
                 escreva(f"A sua média é {media:.2f}, parabéns você passou!")
             else:
                 escreva(f"A sua média é {media:.2f}, infelizmente você não passou.")
@@ -86,25 +85,24 @@ def aprovacao():
     resposta = "s"
     while resposta == "s":
         try:
-            soma_notas = 0#eu acho que vocês ja entenderam para que serve a variável soma_notas
-            soma_faltas = 0# a variável soma_faltas vai fazer a mesma coisa que soma_notas, mas para as faltas
-            for i in range(1,3):# o for vai repetir duas vezes para pegar as notas e faltas dos dois bimestres
+            soma_notas = 0
+            soma_faltas = 0
+            for i in range(1,3):
             
                 notas_B = float(input(f"Digite a sua nota do {i} bimestre: "))
                 faltas_B = int(input(f"Digite a quantidades de faltas do {i} bimestre: "))
 
-                while notas_B < 0 or faltas_B < 0:# se uma das notas ou faltas for negativa o codigo vai se repetir ate que o usuário digite uma nota válida
+                while notas_B < 0 or faltas_B < 0:
                     print("Você digitou suas notas ou faltas de forma negativa. por favor corrija.")
                     notas_B = float(input(f"Redigite sua nota do {i} bimestre : "))
                     faltas_B = int(input(f"Redigite a quantidades de faltas do {i} bimestre: "))
 
-                soma_notas += notas_B#isso e a mesma coisa de soma_notas = soma_notas + notas_B(só uma coisa esses soma_notas+= notas_B e soma_notas += faltas_B estão dentro para que eles possam fazer a soma das notas e faltas de cada bimestre)
+                soma_notas += notas_B
                 soma_faltas += faltas_B
-            media_n = soma_notas / 2# soma_notas que tem os valores das duas notas dividido por 2 para fazer a média
-            media_f = soma_faltas / 2# a mesma coisa que media_n, mas para as faltas
+            media_n = soma_notas / 2
+            media_f = soma_faltas / 2
 
-            #essa parte eu acho que vocês ja entederam
-            if media_n >= 60 and media_f < 6:#se a media for maior ou igual a 60 e a media de faltas for menor que 6 o aluno passou.(e por ai vai)
+            if media_n >= 60 and media_f < 6:
 
                 escreva(f"Sua média é {media_n:.2f} e teve {media_f}faltas, parabéns você foi aprovado.")
             elif 48 <= media_n < 60 and media_f < 8:
@@ -126,21 +124,21 @@ def logica():
         print(f"  {mgs}")
         print("_" * tamanho)
 
-    #Jesus Cristo! como eu vou explicar isso?!
-    while True:# isso vai continuar até que o while seja interrompido pelo break ou mude para false
+    
+    while True:
         try:
             n1 = float(input("Digite o primeiro número: "))
             n2 = float(input("Digite o segundo número: "))
             n3 = float(input("Digite o terceiro número: "))
 
-            if n1 != n2 and n2 != n3 and n1 != n3:# se n1, n2 e n3 forem diferentes(break e continua o codigo ja que todos os números são diferentes)
+            if n1 != n2 and n2 != n3 and n1 != n3
                 break
-            else:# se algum dos números forem iguais ele vai pedir para o usuário digitar novamente
+            else:
                 print("Todos os números devem ser diferentes. Tente novamente.")
         except ValueError:
             print("você digitou algo diferente de um número. Tente novamente: ")
 
-    if n1 > n2 and n1 < n3 or n1 < n2 and n1 > n3:# se n1 for maior que n2 e menor que n3 ou menor que n2 e maior que n3 o n1 e o número do meio(a mesma coisa para os outros.(nem sei se eu mesmo entendi isso '_'))
+    if n1 > n2 and n1 < n3 or n1 < n2 and n1 > n3:
         meio = n1
     elif n2 > n1 and n2 < n3 or n2 < n1 and n2 > n3:
         meio = n2
@@ -165,19 +163,18 @@ def login():
     login_s = input("Entre com seu login: ")
     senha_s = int(input("Entre com sua senha numérica: "))
 
-    if login_s == login and senha_s == senha:# se a senha que eu digitei for igual a senha cadastrada o acesso é permitido a mesma coisa para o login
+    if login_s == login and senha_s == senha:
         escreva("Acesso Permitido.")
 
-    elif login_s == login and senha_s != senha:# se o login for igual a "admin" e a senha diferente de "1234" deve aparecer a mensagem “Senha incorreta”
+    elif login_s == login and senha_s != senha:
         escreva("Senha incorreta.")
 
     else:
-        escreva("Usuário não cadastrado.")# se o login for diferente de "admin" deve aparecer a mensagem “Usuário não cadastrado”.
+        escreva("Usuário não cadastrado.")
 
 #6)Crie um algoritmo que solicite a idade de uma pessoa e informe se ela é obrigada a votar considerando as faixas de idade: menos de 16 anos não vota; de 16 anos a menos de 18 e acima de 70 anos é facultativo; de 18 anos a 69 anos o voto é obrigatório.
 def checa_idade_voto():
 
-    #eu acho que esse codigo ucom outrom que ja fiz, mas não tenho certeza
 
     def escreva (mgs):
         tamanho = len(mgs) + 4
