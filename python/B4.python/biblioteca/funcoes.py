@@ -67,15 +67,14 @@ def primeira_letra_m(palavra):
         trocou = False
         for i in range (len(minusculas)):
             
-            if letra == minusculas[i]:
+            if letra[0] == minusculas[i]:
 
                 resultado += (maiusculas[i])
                 trocou = True
                 break
 
         if not trocou:
-            resultado += letra
-                
+            resultado += letra                
     print(resultado)
 
 primeira_letra_m("banana")
