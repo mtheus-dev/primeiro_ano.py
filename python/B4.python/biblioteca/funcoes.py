@@ -12,7 +12,7 @@ def letra_maiusculas(palavra):
             
             if letra == minusculas[i]:
 
-                resultado += (maiusculas[i])
+                resultado  += (maiusculas[i])
                 trocou = True
                 break
 
@@ -62,19 +62,35 @@ def primeira_letra_m(palavra):
     minusculas = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
     resultado = ""
+    palavra_final2 = ""
+    palavra_final = []
 
     for letra in palavra:
         trocou = False
-        for i in range (len(minusculas)):
+        for i in range (len(maiusculas)):
             
-            if letra[0] == minusculas[i]:
+            if letra == maiusculas[i]:
 
-                resultado += (maiusculas[i])
+                resultado += minusculas[i]
                 trocou = True
                 break
 
         if not trocou:
-            resultado += letra                
-    print(resultado)
+            resultado += letra
 
-primeira_letra_m("banana")
+    for letra in resultado:
+        palavra_final.append(letra)
+        for i in range(len(minusculas)):
+
+            if palavra_final[0] == minusculas[i]:
+
+                palavra_final[0] = maiusculas[i]
+
+    for i in range(len(palavra_final)):
+        
+        palavra_final2 += palavra_final[i]
+            
+    print(palavra_final2)
+    
+
+primeira_letra_m("bANANA")

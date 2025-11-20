@@ -140,7 +140,9 @@ def operacao():
 #● Tornar a string toda em letras minúsculas.
 #● Contar quantas letras tem na string.
 #● Tornar a primeira letra da string em letra maiúscula e a restante em minúscula.
- 
+
+
+
 #4)Faça um módulo para:
 #● Converter horas para segundos
 #● Converter minutos para segundos
