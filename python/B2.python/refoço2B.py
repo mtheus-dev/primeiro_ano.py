@@ -224,32 +224,41 @@ def menu():
         print(f"  {mgs}")
         print("_" * tamanho)
 
+    operacoes ={
+        1:tabuada_while_for,
+        2:numeros_intervalo_while_for,
+        3:soma_numeros_intervalo_while_for,
+        4:potencia
+    }
 
-    print("Escolha uma das opções abaixo: ")
-    print("1 - Tabuada")
-    print("2 - Números no intervalo")
-    print("3 - Soma dos números no intervalo")
-    print("4 - Potência")
-    print("5 - Sair")
+    while True:
+        print("Escolha uma das opções abaixo: ")
+        print("1 - Tabuada")
+        print("2 - Números no intervalo")
+        print("3 - Soma dos números no intervalo")
+        print("4 - Potência")
+        print("O - Sair")
 
-    escolha = input("Digite a opção desejada: ")
+        while True:
+            try:
 
-    if escolha == "1":
-        tabuada_while_for()
-        menu()
-    elif escolha == "2":
-        numeros_intervalo_while_for()
-        menu()
-    elif escolha == "3":
-        soma_numeros_intervalo_while_for()
-        menu()
-    elif escolha == "4":
-        potencia()
-        menu()
-    elif escolha == "5":
-        escreva("Você optou por sair.")
-    else:
-        escreva("Opção inválida. Tente novamente.")
-        menu()
+                escolha = input("Digite a opção desejada: ")
+
+                if 0 <= escolha <= 4:
+                    break
+
+                else:
+                    escreva("Essa opcão esta no menu. Tente novamente")
+
+            except ValueError:
+                escreva("Entrada invalida. Tente novamente")
+
+        if escolha == 0:
+            escreva("Você optou por sair")
+            break
+
+        operacoes[escolha]
+
+
 #Executando
 menu()

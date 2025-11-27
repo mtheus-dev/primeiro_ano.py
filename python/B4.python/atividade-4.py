@@ -114,37 +114,82 @@ def lista_semelhantes():
 #• Celsius em Fahrenheit (Fórmula: F = (C x 1,8) + 32 ),
 #• Reais para dólares (1 real = 0,19 dólares).
 #No arquivo principal, importe o módulo e permita que o usuário escolha qual conversão deseja realizar
+def conversoes():
+    from biblioteca import conversoes
+    def menu():
+        print("\nEscolha uma conversão:")
+        print("1 - Metros para centímetros")
+        print("2 - Celsius para Fahrenheit")
+        print("3 - Reais para Dólares")
+        print("0 - Sair")
 
-from biblioteca import conversoes
+        opcao = int(input("Digite a opção desejada: "))
+
+        return opcao
+
+    opcao = menu()
+
+    while True:
+        if opcao == 1:
+            metros = float(input("Digite em metros: "))
+            print(f"O valor de {metros} metros em centímetros é {conversoes.converter_m_c(metros)}")
+
+        elif opcao == 2:
+            celsius = float(input("Digite a temperatura em celsius: "))
+            print(f"A temperatura de {celsius:.2f}º celsius em fahrenheit é {conversoes.celsius_em_fahrenheit(celsius):.2f}º")
+
+        elif opcao == 3:
+            reais = float(input("Digite o valor em reais: "))
+            print(f"O valor em {reais} reais em dólares é {conversoes.reais_em_dolares(reais):.2f}")
+
+        elif opcao == 0:
+            print("Você optou por sair")
+            break
+
+        else:
+            print("Entrada invalida. Tente novamente")
+
 def menu():
-    print("\nEscolha uma conversão:")
-    print("1 - Metros para centímetros")
-    print("2 - Celsius para Fahrenheit")
-    print("3 - Reais para Dólares")
-    print("0 - Sair")
 
-    opcao = int(input("Digite a opção desejada: "))
+    def escreva (mgs):
+        tamanho = len(mgs) + 4
+        print("_" * tamanho)
+        print(f"  {mgs}")
+        print("_" * tamanho)
 
-    return opcao
+    operacoes ={
+        1:soma_da_lista_matheus,
+        2:conta_lista_pares_impares,
+        3:buscando_elemento,
+        4:lista_semelhantes,
+    }
 
-opcao = menu()
+    while True:
+        print("Escolha uma das opções abaixo: ")
+        print("1 - soma da lista")
+        print("2 - conta lista pares e impares")
+        print("3 - buscando elemento")
+        print("4 - lista semelhantes")
+        print("0 - Sair")
 
-while True:
-    if opcao == 1:
-        metros = float(input("Digite em metros: "))
-        print(f"O valor de {metros} metros em centímetros é {conversoes.converter_m_c(metros)}")
+        while True:
+            try:
 
-    elif opcao == 2:
-        celsius = float(input("Digite a temperatura em celsius: "))
-        print(f"A temperatura de {celsius:.2f}º celsius em fahrenheit é {conversoes.celsius_em_fahrenheit(celsius):.2f}º")
+                escolha = input("Digite a opção desejada: ")
 
-    elif opcao == 3:
-        reais = float(input("Digite o valor em reais: "))
-        print(f"O valor em {reais} reais em dólares é {conversoes.reais_em_dolares(reais):.2f}")
+                if 0 <= escolha <= 4:
+                    break
 
-    elif opcao == 0:
-        print("Você optou por sair")
-        break
+                else:
+                    escreva("Essa opcão esta no menu. Tente novamente")
 
-    else:
-        print("Entrada invalida. Tente novamente")
+            except ValueError:
+                escreva("Entrada invalida. Tente novamente")
+
+        if escolha == 0:
+            escreva("Você optou por sair")
+            break
+
+        operacoes[escolha]
+
+menu()

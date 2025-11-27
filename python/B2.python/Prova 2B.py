@@ -110,29 +110,37 @@ def menu():
         print(f"  {mgs}")
         print("_" * tamanho)
 
-    print("Escolha uma das opções abaixo: ")
-    print("1 - Contar até zero")
-    print("2 - Repetir palavra")
-    print("3 - Números pares e ímpares")
-    print("0 - Sair")
+    operacoes = {
+        1:conta_ate_zero,
+        2:repete_palavra,
+        3:pares_impares,
+    }
 
-    escolha = input("Digite sua escolha: ")
+    while True:
+        print("Escolha uma das opções abaixo: ")
+        print("1 - Contar até zero")
+        print("2 - Repetir palavra")
+        print("3 - Números pares e ímpares")
+        print("0 - Sair")
 
-    if escolha == "1":
-        conta_ate_zero()
-        menu()
-    elif escolha == "2":
-        repete_palavra()
-        menu()
-    elif escolha == "3":
-        pares_impares()
-        menu()
-    elif escolha == "0":
-        escreva("Você optou por sair.")
-    else:
-        escreva("Opção inválida. Tente novamente.")
-        menu()
+        while True:
+            try:
+                escolha = int(input("Digite sua escolha: "))
 
+                if 0 <= escolha <=3:
+                    break
+                
+                else:
+                    escreva("Essa opcão não esta no menu. Tente novamente")
+
+            except ValueError:
+                escreva("Entrada invalida. Tente novamente")
+
+        if escolha == 0:
+            escreva("você optou por sair")
+            break
+
+        operacoes[escolha]()
 
 # Inicia o programa
 menu()
