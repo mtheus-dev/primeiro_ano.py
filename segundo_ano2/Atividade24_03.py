@@ -2,16 +2,25 @@
 
 class MaquinaDeIngresso:
     #construtor
-    def __init__ (self,valor_p,valor_s,valor_t):#valor_p,valor_s,valor_t
+    def __init__ (self,valor_p):#valor_p,valor_s,valor_t
         #atributos
-        self.preco = valor_p
-        self.saldo = valor_s
-        self.total = valor_t
+        self.preco = float(valor_p)
+        self.saldo = 0
+        self.total = 0
+    
+        #método
+        #método acessor
+    def preco (self):
+        return self.preco
+    
+    #método modificador
+    def definirPreco (self,novoPreco):
+        self.preco = novoPreco
 
-        
+    def imprimir_ingresso(self):
+    novoPreco = float(input("Qual é o novo preço do ingresso?: "))
+
 #costruir objeto
-maquina1 = MaquinaDeIngresso (10,11,5)
-maquina2 = MaquinaDeIngresso (99,18,7)
 
-print(maquina1.preco,maquina1.saldo,maquina1.total)
-print(maquina2.preco,maquina2.saldo,maquina2.total)
+maquina1 = MaquinaDeIngresso ()
+maquina2 = MaquinaDeIngresso ()
