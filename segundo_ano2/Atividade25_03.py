@@ -22,5 +22,10 @@ def exercicio2():
     print(f" Deivid? {chamada.nome}\n {chamada.nomet}")
 
 def exercicio3 ():
-    class garcon:
-        def __init__(self,matricula,nome,telefone,comi):
+    class Garcon:
+        def __init__ (self,matricula,nome,telefone,comissao):
+            #construtor
+            self.cod_matricula = int(matricula)
+            self.garcom_nome = str(nome)
+            self.num_telefone = str(telefone)
+            self.valor_comisso = float(comissao) 
