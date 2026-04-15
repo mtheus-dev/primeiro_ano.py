@@ -27,3 +27,6 @@ class Aquecedor:
 
     def getTemperatura(self):
         return self.temperatura 
+    
+    def exibir(self):
+        print(f"A temperatura do aquecedor é: {self.temperatura}")

@@ -19,4 +19,4 @@ def aquecer_a(nome):
 aquecedor_comum = Aquecedor (9,35)
 aquecedor_premium = Aquecedor (5,40)
 
-esfriar_d(aquecedor_comum)
+aquecedor_comum.exibir()
