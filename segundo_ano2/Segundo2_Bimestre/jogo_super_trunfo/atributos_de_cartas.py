@@ -1,4 +1,7 @@
-from trabalho_de_cartas import Carta
+from trabalho_de_cartas import *
+
+jogador = []
+cpu = []
 
 formiga = Carta("Formiga de mel",200,10,15,2,9)
 barata = Carta("Barata",600,20,70,9,3)
@@ -20,7 +23,30 @@ baralho = [
     aranha,
 ]
 
-def todas_cartas(self):
-    self.abelha.exibir()
+def distribuir_cartas(baralho):
+    mao_de_jogo = []
+    random.shuffle(baralho)
+    mao_de_jogo = len(baralho)//2
+    return mao_de_jogo
 
-#distribuir
+def mao_jogador(baralho):
+    mao_jogador = []
+    mao_jogador = distribuir_cartas(baralho)
+    return mao_jogador
+
+def mao_cpu(baralho):
+    mao_cpu = []
+    mao_cpu = distribuir_cartas(baralho)
+    return mao_cpu
+
+def exibir_mao(mao_jogador,mao_cpu):
+    for i in range (len(mao_jogador)):
+        print(f"===Mão de jogador===\n{mao_jogador[i]}")
+
+    for i in range (len(mao_cpu[i])):
+        print(f"===Mão da CPU===\n{mao_cpu[i]}")
+
+
+jogador = mao_jogador(baralho)
+cpu = mao_cpu(baralho)
+exibir_mao(jogador,cpu)
